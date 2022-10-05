@@ -15,12 +15,15 @@
             </select>
             <select
                 class="mx-2 rounded-md flex justify-center shadow-xl shadow-gray-300 border-2 h-10 p-2"
+                v-model="selectedCategory"
             >
-                <option value="all">Tüm Ürünler</option>
-                <option value="men's clothing">Men's clothing</option>
-                <option value="jewelery">Jewelery</option>
-                <option value="electronics">Electronics</option>
-                <option value="women's clothing">Women's clothing</option>
+                <option
+                    v-for="category in categories"
+                    :key="category.name"
+                    :selected="category.value == 'all'"
+                >
+                    {{ category.value }}
+                </option>
             </select>
             <div
                 class="mx-2 rounded-md flex justify-centerflex shadow-xl shadow-gray-300 border-2 h-10 w-20 p-2"
@@ -41,7 +44,12 @@
                 v-for="(product, idx) in products"
                 :key="idx"
             >
-                <div>
+                <div
+                    v-if="
+                        selectedCategory == 'all' ||
+                        product.category == selectedCategory
+                    "
+                >
                     <div class="flex justify-center">
                         <img
                             :src="product.image"
@@ -54,16 +62,6 @@
                     <div class="mt-2 h-10">
                         <span class="font-bold">Taksitli Fiyat:</span>
                         12 x {{ (product.price / 12).toFixed(2) }}TL
-                    </div>
-                    <div class="flex justify-center items-center m-2">
-                        <div class="mx-4 hover:text-red-400">
-                            {{ product.rating.rate }}
-                            <ion-icon name="star"></ion-icon>
-                        </div>
-                        <div class="mx-4 hover:text-red-400">
-                            {{ product.rating.count }}
-                            <ion-icon name="person"></ion-icon>
-                        </div>
                     </div>
                     <div class="flex justify-center items-center p-4">
                         <ion-icon
@@ -79,8 +77,19 @@
                             name="reorder-three-outline"
                         ></ion-icon>
                     </div>
-
-                    <!-- <div class="m-2">{{ product.category }}</div> -->
+                    <div class="flex justify-center items-center m-2">
+                        <div class="mx-4 hover:text-red-400">
+                            {{ product.rating.rate }}
+                            <ion-icon name="star"></ion-icon>
+                        </div>
+                        <div class="mx-4 hover:text-red-400">
+                            {{ product.rating.count }}
+                            <ion-icon name="person"></ion-icon>
+                        </div>
+                    </div>
+                    <div class="m-2" v-if="selectedCategory !== null">
+                        {{ product.category }}
+                    </div>
                     <button
                         class="bg-red-600 w-full text-white rounded-md hover:bg-red-400"
                     >
@@ -101,18 +110,24 @@ import { useRouter, useRoute } from "vue-router";
 const store = useStore();
 const router = useRouter();
 
+const categories = ref([
+    { value: "all", name: "Tüm Kategoriler" },
+    { value: "men's clothing", name: "Men's clothing" },
+    { value: "jewelery", name: "Jewelery" },
+    { value: "electronics", name: "Electronics" },
+    { value: "women's clothing", name: "Women's clothing" },
+]);
+
 const productInfoService = new ProductService();
 const products = ref([] as IProduct[]);
-const productCategory = ref(null);
+const productCategory = ref([] as IProduct[]);
+const selectedCategory = ref("all");
 
 const getProductsInfo = () => {
     productInfoService.getProduct().then((response) => {
         products.value = response;
-    });
-    productInfoService.getProductCategory().then((response) => {
-        productCategory.value = response.filter(
-            (item) => item.category === store.state.activeProduct
-        );
+        productCategory.value = response.map((item) => item.category);
+        console.log(productCategory.value);
     });
 };
 

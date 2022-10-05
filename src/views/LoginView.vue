@@ -5,13 +5,6 @@
                 <div
                     class="flex justify-center items-center flex-wrap h-full g-6 text-gray-800"
                 >
-                    <div class="md:w-8/12 lg:w-6/12 mb-12 md:mb-0">
-                        <img
-                            src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.svg"
-                            class="w-full"
-                            alt="Phone image"
-                        />
-                    </div>
                     <div class="md:w-8/12 lg:w-5/12 lg:ml-20">
                         <form>
                             <div class="mb-6">
@@ -21,7 +14,6 @@
                                     placeholder="Email address"
                                 />
                             </div>
-
                             <div class="mb-6">
                                 <input
                                     type="password"
@@ -29,7 +21,6 @@
                                     placeholder="Password"
                                 />
                             </div>
-
                             <div class="flex justify-between items-center mb-6">
                                 <div class="form-group form-check">
                                     <input
@@ -50,7 +41,6 @@
                                     >Forgot password?</a
                                 >
                             </div>
-
                             <button
                                 type="submit"
                                 class="inline-block px-7 py-3 bg-red-600 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-red-700 hover:shadow-lg focus:bg-red-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-red-800 active:shadow-lg transition duration-150 ease-in-out w-full"
@@ -59,15 +49,15 @@
                             >
                                 Sign in
                             </button>
-
                             <div
                                 class="flex items-center my-4 before:flex-1 before:border-t before:border-gray-300 before:mt-0.5 after:flex-1 after:border-t after:border-gray-300 after:mt-0.5"
                             >
                                 <p class="text-center font-semibold mx-4 mb-0">
                                     OR
                                 </p>
+                                <a href="#" class="text-center font-semibold"><span class="font-bold text-xs hover:underline">SIGN UP</span></a>
                             </div>
-
+                            <div class="flex flex-col items-center p-2">
                             <a
                                 class="px-7 py-3 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg transition duration-150 ease-in-out w-full flex justify-center items-center mb-3"
                                 style="background-color: #3b5998"
@@ -78,9 +68,8 @@
                             >
                                 <!-- Facebook -->
                                 <svg
-                                    xmlns="http://www.w3.org/2000/svg"
                                     viewBox="0 0 320 512"
-                                    class="w-3.5 h-3.5 mr-2"
+                                    class="w-3.5 h-3.5 mr-5"
                                 >
                                     <path
                                         fill="currentColor"
@@ -91,16 +80,15 @@
                             <a
                                 class="px-7 py-3 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg transition duration-150 ease-in-out w-full flex justify-center items-center"
                                 style="background-color: #55acee"
-                                href="#!"
+                                href="#"
                                 role="button"
                                 data-mdb-ripple="true"
                                 data-mdb-ripple-color="light"
                             >
                                 <!-- Twitter -->
                                 <svg
-                                    xmlns="http://www.w3.org/2000/svg"
                                     viewBox="0 0 512 512"
-                                    class="w-3.5 h-3.5 mr-2"
+                                    class="w-3.5 h-3.5 mr-5"
                                 >
                                     <path
                                         fill="currentColor"
@@ -108,6 +96,7 @@
                                     /></svg
                                 >Continue with Twitter
                             </a>
+                        </div>
                         </form>
                     </div>
                 </div>

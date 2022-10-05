@@ -1,22 +1,19 @@
 <template>
     <div>
-        <LayoutComponent>
-            <ProductList></ProductList>
-        </LayoutComponent>
-        
-        <!-- <HomeView></HomeView>
-        <LoginView></LoginView>
-        <BasketView></BasketView> -->
+        <nav>
+            <router-link to="/">Home</router-link>
+            <router-link to="/login">Login</router-link>
+            <router-link to="/basket">Basket</router-link>
+            <router-link to="/about">About</router-link>
+            <router-view></router-view>
+        </nav>
     </div>
 </template>
 
 <script lang="ts" setup>
-import LayoutComponent from "./components/layout/LayoutComponent.vue";
-import ProductList from "./components/shared/ProductList.vue";
-
-/* import HomeView from "./views/HomeView.vue";
+import HomeView from "./views/HomeView.vue";
 import LoginView from "./views/LoginView.vue";
-import BasketView from "./views/BasketView.vue"; */
+import BasketView from "./views/BasketView.vue";
 </script>
 
 <style lang="scss">
