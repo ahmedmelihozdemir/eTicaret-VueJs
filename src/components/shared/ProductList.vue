@@ -27,17 +27,19 @@
             </select>
             <div
                 class="mx-2 rounded-md flex justify-centerflex shadow-xl shadow-gray-300 border-2 h-10 w-20 p-2"
+                
             >
-                <button class="mx-2 hover:text-red-800 active:text-red-900">
+                <button class="mx-2 hover:text-red-800 active:text-red-900"  @click="listView = false">
                     <ion-icon name="grid-outline"></ion-icon>
                 </button>
-                <button class="mx-2 hover:text-red-800 active:text-red-900">
+                <button class="mx-2 hover:text-red-800 active:text-red-900" @click="listView = true">
                     <ion-icon name="list-outline"></ion-icon>
                 </button>
             </div>
         </div>
         <div
             class="grid xl:grid-cols-4 lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-4"
+            :class="{'grid xl:grid-cols-4 lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-4': !listView, 'grid xl:grid-cols-2 lg:grid-cols-1 md:grid-cols-1 sm:grid-cols-1 gap-4': listView}"
         >
             <div
                 class="card border-2 p-4 m-11 rounded-lg hover:cursor-pointer hover:shadow-lg hover:border-orange-800"
@@ -117,6 +119,8 @@ const categories = ref([
     { value: "electronics", name: "Electronics" },
     { value: "women's clothing", name: "Women's clothing" },
 ]);
+
+const listView = ref(false);
 
 const productInfoService = new ProductService();
 const products = ref([] as IProduct[]);
