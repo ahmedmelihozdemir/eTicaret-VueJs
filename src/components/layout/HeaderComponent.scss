@@ -1,0 +1,50 @@
+nav {
+  .up-header {
+    background-color: red;
+  }
+  a {
+    margin: 10px 20px;
+    font-weight: bold;
+    font-size: large;
+    color: black;
+    &:hover {
+      text-decoration: solid underline;
+      border-radius: 10px;
+      transform: matrix() (1, 0, 0, 1, 0, 0);
+      transition: all 0.2s ease-in-out;
+    }
+    &.router-link-exact-active {
+      color: black;
+      text-decoration-line: underline;
+    }
+  }
+}
+.upper-info,
+.up-header,
+.logo-section,
+.logo-img {
+  @media screen and (max-width: 640px) {
+    display: none;
+  }
+}
+.right-info {
+  .blog {
+    font-family: "Lato", sans-serif;
+    padding: 8px;
+    background-color: red;
+  }
+  .yardim {
+    font-family: "Lato", sans-serif;
+    padding: 8px;
+  }
+}
+ion-icon {
+  font-size: 1rem;
+  color: #9a3412;
+  /* color: #3B82F6; */
+}
+.log-icon {
+  margin: 5px;
+  font-size: 1.5rem;
+  color: #9a3412;
+}

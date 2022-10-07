@@ -2,24 +2,32 @@
     <nav class="navbar">
         <div class="upper-info grid grid-flow-col bg-gray-100">
             <div
-                class="flex items-center justify-start"
+                class="flex justify-center items-center text-gray-500 text-sm font-bold"
                 v-for="(icon, idx) in icons"
                 :key="idx"
             >
-                <ion-icon
-                    :name="icon.logo"
-                    class="hover:cursor-pointer hover:text-gray-600"
-                ></ion-icon>
-            </div>
-            <div class="right-info flex justify-end">
-                <div class="yardim mx-4 hover:cursor-pointer">
-                    <a href="/yardim" class="text-white">Yardım</a>
+                <div class="flex justify-center items-center">
+                    <ion-icon
+                        class="hover:cursor-pointer hover:text-gray-600"
+                        :name="icon.logo"
+                    ></ion-icon>
                 </div>
-                <div class="blog mx-4 hover:cursor-pointer">
-                    <a href="/yardim" class="text-white">Blog</a>
+            </div>
+
+            <div class="right-info flex justify-end">
+                <div class="yardim hover:cursor-pointer">
+                    <a href="/yardim" class="text-white hover:text-red-300"
+                        >Yardım</a
+                    >
+                </div>
+                <div class="blog hover:cursor-pointer">
+                    <a href="/blog" class="text-white hover:text-red-300"
+                        >Blog</a
+                    >
                 </div>
             </div>
         </div>
+        
         <div
             class="logo-section grid grid-flow-col grid-cols-4 gap-2 sm:grid-cols-1 md:grid-cols-1"
         >
@@ -71,7 +79,6 @@
                             fill="none"
                             stroke="currentColor"
                             viewBox="0 0 24 24"
-                            xmlns="http://www.w3.org/2000/svg"
                         >
                             <path
                                 stroke-linecap="round"
@@ -161,7 +168,6 @@ const icons = ref([
     { logo: "logo-youtube" },
 ]);
 
-
 const goLogin = () => {
     router.push("/login");
 };
@@ -175,62 +181,5 @@ const getProducts = (type: string, value: string) => {
 </script>
 
 <style lang="scss" scoped>
-nav {
-    .up-header {
-        background-color: red;
-    }
-    a {
-        margin: 10px 20px;
-        font-weight: bold;
-        font-size: large;
-        color: black;
-        &:hover {
-            text-decoration: solid underline;
-            border-radius: 10px;
-            transform: matrix() (1, 0, 0, 1, 0, 0);
-            transition: all 0.2s ease-in-out;
-        }
-        &.router-link-exact-active {
-            color: black;
-            text-decoration-line: underline;
-        }
-    }
-}
-.upper-info {
-    @media screen and (max-width: 550px) {
-        display: none;
-    }
-}
-.up-header {
-    @media screen and (max-width: 550px) {
-        display: none;
-    }
-}
-.logo-section {
-    @media screen and (max-width: 550px) {
-        display: none;
-        .logo-img {
-            display: none;
-        }
-    }
-}
-.right-info {
-    .blog {
-        padding: 8px;
-        background-color: red;
-    }
-    .yardim {
-        padding: 8px;
-    }
-}
-ion-icon {
-    font-size: 1rem;
-    color: #9a3412;
-    /* color: #3B82F6; */
-}
-.log-icon {
-    margin: 5px;
-    font-size: 1.5rem;
-    color: #9a3412;
-}
+@import "@/components/layout/HeaderComponent.scss";
 </style>
