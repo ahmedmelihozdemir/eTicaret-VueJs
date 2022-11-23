@@ -138,7 +138,7 @@
                                     <input
                                         type="search"
                                         id="default-search"
-                                        class="block p-4 pl-10 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-white-700 dark:border-red-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                        class="block p-4 pl-10 w-full text-sm text-gray-900 bg-gray-200 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-white-700 dark:border-red-600 dark:placeholder-gray-400 dark:text-black dark:focus:ring-blue-500 dark:focus:border-red-500 outline-none"
                                         placeholder="Bize ulaşın"
                                     />
                                     <button
@@ -181,7 +181,7 @@
                 <span
                     class="text-sm text-gray-500 sm:text-center dark:text-gray-400"
                 >
-                    <a href="/" class="hover:underline">akıllıticaret</a>
+                    <a href="/" class="hover:underline">melihticaret</a>
                 </span>
             </div>
         </footer>
